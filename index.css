@@ -19,7 +19,7 @@ div.nav {
     border-style: solid;
     z-index: 999;
     width: 10vw;
-    transition: left 250ms ease-in;
+    transition: all 250ms ease-in;
 }
 
 ul.nav, li.nav {
@@ -33,10 +33,15 @@ ul.nav, li.nav {
     padding: 0;
 }
 
+div.about p {
+    overflow: scroll;
+}
+
 div.content {
     position: absolute;
     left: 5vw;
     width: 95vw;
+    height: 100vh;
     transition: left 250ms ease-in;
     overflow-x: auto;
     overflow-y: scroll;
@@ -54,7 +59,7 @@ div.nav:hover ul.nav, li.nav {
 
 ul.nav {
     position: relative;
-    margin: 15vh 1vw;
+    justify-content: center;
 }
 
 li.nav a.nav {
@@ -62,13 +67,17 @@ li.nav a.nav {
 }
 
 div.nav:hover {
-    left: 0;
-    transition: left 500ms ease-out;
+    transition: all 500ms ease-out;
 }
 
 div.nav:hover ~ div.content {
-    left: 12vw;
-    transition: left 500ms ease-out;
+    transition: all 500ms ease-out;
+}
+
+div.about {
+    position: relative;
+    padding-bottom: 10vh;
+    justify-content: center;
 }
 
 @keyframes appear {
@@ -148,8 +157,80 @@ html {
     width:100%; 
 }
 
-div.content h1, div.content h2 {
+div.content div {
     position: relative;
-    align-self: center;
+    justify-content: center;
+    align-items: center;
     margin: auto;
+}
+
+@media (min-width: 700px) {
+    div.nav:hover {
+        left: 0;
+    }
+
+    div.nav:hover ~ div.content {
+        left: 12vw;
+    }
+
+    div.nav {
+        transition: all .5s ease-out;
+    }
+
+    h2[id="title"] {
+        margin: 1vh 1vw;
+    }
+
+    div.nav:hover {
+        left: 0;
+    }
+
+    .title {
+        top: 5vh;
+    }
+
+    ul.nav {
+        margin: 15vh 1vw;
+    }
+    
+    div.about p {
+        width: 20vw;
+    }
+}
+
+@media (max-width: 700px) {
+    div.about p {
+        width: 80vw;
+    }
+
+    div.nav:hover {
+        top: 0;
+    }
+
+    div.nav:hover ~ div.content {
+        top: 100vh;
+    }
+
+    h1 {
+        margin: 7.5vh 0 0;
+    }
+
+    html {
+        overflow: hidden;
+    }
+
+    div.nav {
+        top: -95vh;
+        height: 100vh;
+        width: 102vw;
+        left: 0;
+        overflow: hidden;
+        display: flex;
+        margin: auto;
+        justify-content: center;
+        align-items: center;
+    }
+    li.nav {
+        margin-top: 5vh;
+    }
 }
