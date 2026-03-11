@@ -1,5 +1,3 @@
 # Hello! I'm @DiscardStudio
 
-I work on Game Development and Security Engineering
-
-You can learn more at my [website](https://discard.studio)!
+I'm a Software Engineer at Snap inc. This account is made for projects I work on in my spare time.
